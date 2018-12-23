@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/ws/clion_ws/CProject/com.bp.algorithm/T00001.cpp
+vector
+-
+map
+-
+list
+-
+set
+-
+iostream
+-
+
