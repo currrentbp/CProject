@@ -21,13 +21,15 @@ public:
     vector<int> twoSum1(vector<int> &nums, int target) {
         map<int, int> numMaps;
         for (int i = 0; i < nums.size(); ++i) {
-            numMaps.insert(pair<int, int>(nums[i], i));
+            numMaps.insert(make_pair(nums[i], i));
         }
 
         for (int i = 0; i < nums.size(); ++i) {
             int value = target - nums[i];
-            int x = numMaps[value];
-            cout << "key:" << value << " value:" << x<<"\n";
+            map<int,int>::iterator it = numMaps.find(value);
+            if(it == numMaps.end()){
+                cout<<it->first<<"  end";
+            }
         }
     }
 };
