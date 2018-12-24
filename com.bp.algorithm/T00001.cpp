@@ -11,7 +11,7 @@ using namespace std;
 
 //todo not work
 /*
- * 给定 nums = [2, 7, 11, 15], target = 9
+给定 nums = [2, 7, 11, 15], target = 9
 因为 nums[0] + nums[1] = 2 + 7 = 9
 所以返回 [0, 1]
  */
@@ -24,18 +24,24 @@ public:
             numMaps.insert(make_pair(nums[i], i));
         }
 
+        vector<int> vector2;
         for (int i = 0; i < nums.size(); ++i) {
             int value = target - nums[i];
-            map<int,int>::iterator it = numMaps.find(value);
-            if(it == numMaps.end()){
-                cout<<it->first<<"  end";
+            map<int, int>::iterator it = numMaps.find(value);
+            if (it == numMaps.end()) {
+
+            } else {
+                cout << "key:" << it->first << " value:" << it->second << endl;
+                vector2={i,it->second};
+                break;
             }
         }
+        return vector2;
     }
 };
 
 int main() {
     Solution solution;
-    vector<int> vector1 = {2,7,11,15};
-    solution.twoSum1(vector1, 9);
+    vector<int> vector1 = {2, 7, 11, 15};
+    vector<int> result = solution.twoSum1(vector1, 9);
 }
