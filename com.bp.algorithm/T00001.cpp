@@ -53,7 +53,7 @@ public:
     }
 };
 
-int main() {
+int main1() {
     T00001 solution;
     vector<int> vector1 = {2, 7, 11, 15};
     vector<int> value = solution.twoSum2(vector1, 9);

@@ -6,6 +6,7 @@
 #include<list>
 #include <set>
 #include <iostream>
+#include <gtest/gtest.h>
 
 using namespace std;
 
@@ -20,9 +21,43 @@ using namespace std;
 原因：342 + 465 = 807
  */
 //https://leetcode-cn.com/problems/add-two-numbers/
+
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
 class T00002 {
 public:
-    ListNode* addTwoNumbers1(ListNode* l1, ListNode* l2) {
+    ListNode *addTwoNumbers1(ListNode *l1, ListNode *l2) {
+        ListNode *result;
+        ListNode *next = result;
+        do{
+            int value = l1->val+l2->val;
+            ListNode temp = ListNode(value);
+            next->next = &temp;
+        }while(l1->next != NULL);
+        return result;
+    }
 
+    void p1() {
+        cout << "print baopan" << endl;
+    }
+
+    int add(int a, int b) {
+        cout << "print baopan" << endl;
+        return a + b;
     }
 };
+
+TEST(test, c1
+) {
+    T00002 t00002;
+    EXPECT_EQ(3, t00002.add(1, 2));
+}
+
+GTEST_API_ int main(int argc, char **argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
