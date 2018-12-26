@@ -40,21 +40,12 @@ public:
         }while(l1->next != NULL);
         return result;
     }
-
-    void p1() {
-        cout << "print baopan" << endl;
-    }
-
-    int add(int a, int b) {
-        cout << "print baopan" << endl;
-        return a + b;
-    }
 };
 
 TEST(test, c1
 ) {
     T00002 t00002;
-    EXPECT_EQ(3, t00002.add(1, 2));
+    t00002.p1();
 }
 
 GTEST_API_ int main(int argc, char **argv) {
