@@ -4,6 +4,7 @@
 .settings
 target/
 out/
+googletest/
 cmake-build-debug/*
 *.iml
 .idea/*
