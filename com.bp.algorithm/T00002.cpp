@@ -1,12 +1,7 @@
 //
 // Created by bao on 2018/12/23.
 //
-#include<vector>
-#include <map>
-#include<list>
-#include <set>
-#include <iostream>
-#include <gtest/gtest.h>
+#include "common.h"
 
 using namespace std;
 
@@ -33,12 +28,36 @@ public:
     ListNode *addTwoNumbers1(ListNode *l1, ListNode *l2) {
         ListNode *result;
         ListNode *next = result;
-        do{
-            int value = l1->val+l2->val;
-            ListNode temp = ListNode(value);
+        int remain = 0;
+        int toNext = 0;
+        do {
+            int value = (NULL == l1 ? 0 : l1->val) + (NULL == l2 ? 0 : l2->val);
+            remain = value % 10;
+            ListNode temp = ListNode(remain + toNext);
+            toNext = value / 10;
             next->next = &temp;
-        }while(l1->next != NULL);
+        } while (l1->next != NULL || l2->next != NULL || toNext != 0);
         return result;
+    }
+
+    void p1() {
+        cout << endl << "ssss" << endl;
+        T00002 t00002;
+        ListNode *l1, *l1_1, *l1_2, *l2, *l2_1, *l2_2;
+        l1->val = 2;
+        l1_1->val = 4;
+        l1_2->val = 3;
+        l1->next = l1_1->next = l1_2;
+        l2->val = 5;
+        l2_1->val = 6;
+        l2_2->val = 4;
+        l2->next = l2_1->next = l2_2;
+        ListNode *listNode = t00002.addTwoNumbers1(l1, l2);
+
+        do{
+            cout<<listNode->val;
+            listNode = listNode->next;
+        }while(listNode->next != NULL);
     }
 };
 
